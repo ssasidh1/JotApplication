@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300;1,400;1,500&family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400;1,600&family=Noto+Sans+Display:ital,wght@0,400;1,100&family=Open+Sans:ital,wght@1,300;1,400;1,500&family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400;1,600&family=Noto+Sans+Display:ital,wght@0,400;1,100&family=Open+Sans:ital,wght@1,300;1,400;1,500&family=Playfair+Display:wght@700&family=Roboto+Slab:wght@500&display=swap');
+.form-data{
+    position: absolute;
+    top:2%;
+    height: 100%;
+    width: 100%;
+}
+
+.name-input{
+    position:absolute;
+    left:140px;
+    padding: 0.200rem 0.75rem;
+    
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.name-label{
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+}
+
+.tags{
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    position: absolute;
+    right:28%;
+    
+}
+.creatable{
+    position: absolute !important;
+    width: 25%;
+    right:2%;
+    
+}
+.css-13cymwt-control{
+    min-height: 10px !important;
+    max-height: 35px !important;
+}
+.body-label{
+    position: absolute;
+    display: block;
+    top: 10%;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    left:1%;
+}
+
+.textarea{
+    position: absolute;
+    display: block;
+    top: 94px;
+    width: 752px;
+    height: 80%;
+    resize: none;
+    padding: 0.200rem 0.75rem;
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+} 
+.textarea:focus{
+    outline: none;
+}
+
+.keypts-label{
+    position: absolute;
+    display: block;
+    top:10%;
+    left: 800px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+}
+
+.textarea-keys{
+    position: absolute;
+    display: block;
+    top: 94px;
+    left: 753px;
+    width: 17%;
+    height: 80%;
+    resize: none;
+    padding: 0.200rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.textarea-keys:focus{
+    outline: none;
+}
+
+.save-btn{
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+    background-color: rgb(193, 224, 107);
+    border: 1.5px solid green;
+    border-radius: 0.25rem;
+    padding:5px 10px;
+}
+
+.cancel-btn{
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    background-color: rgb(239, 247, 219);
+    border: 1px solid rgb(1, 54, 1);
+    border-radius: 0.25rem;
+    padding:5px 10px;
+}
+.css-b62m3t-container {
+    /* position: relative; */
+    box-sizing: border-box;
+}
+
+.module{
+    background-color: red;
+}
+
+.textEditor{
+    position: absolute;
+    top:30%;
+}
+
