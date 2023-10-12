@@ -3,6 +3,8 @@ import styles from "./notesStorage.module.css"
 import { EditNotes } from "./EditNotes";
 import { useNavigate } from 'react-router-dom'
 import { removeItem } from "./useLocalStorage";
+import trash from "/trash-fill.svg";
+import pencil from "/pencil-square.svg";
 export function NotesStorage(props){
     // const notes = props.data;
     console.log("notes data ",props.data)
@@ -48,9 +50,9 @@ export function NotesStorage(props){
                 <h2 className={styles["card-title"]}>{note[1].title}</h2>
                 <p className={styles["card-body"]}>{note[1].body}</p>
                 <button className={styles["view-btn"]} onClick={()=>handleClick(note[0])}>
-                <img src="/pencil-square.svg" alt="edit-button" border="0" className={styles.edit} /></button>
+                <img src={pencil} alt="edit-button" border="0" className={styles.edit} /></button>
                 <button className={styles["delete-btn"]} onClick={()=>handleDeleteClick(note[0])}>
-                <img src="/trash-fill.svg" alt="edit-button" border="0" className={styles.trash} />
+                <img src={trash} alt="edit-button" border="0" className={styles.trash} />
                 </button>
              </div>
              

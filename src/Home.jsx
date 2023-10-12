@@ -6,6 +6,10 @@ import { getDataForTag, getStorage } from "./useLocalStorage";
 import { notesFetchForHome } from "./useLocalStorage";
 import { getTags } from "./useLocalStorage";
 import { useRef } from "react";
+import downarrow from "/down-arrow.png";
+import plus from "/plus.png";
+
+
 import CreatableSelect from "react-select/creatable"
 export function Home() {
     const [activeButton, setActiveButton] = useState({ downArrowBtn: false });
@@ -177,14 +181,14 @@ export function Home() {
             <CreatableSelect isMulti styles = {style}options={options} value = {value} className={styles['tag-search']} onChange = {handleTagChange} />
             {/* <input type="search" className={styles['tag-search']} placeholder="Search with Tags" onChange={tagChange} value={search} /> */}
             <button onClick={() => navigateToCreatePage()} className={styles.plusbutton}>
-                <img src="/plus.png" alt="plus-button" border="0" className={styles.plusbtn} />
+                <img src={plus} alt="plus-button" border="0" className={styles.plusbtn} />
             </button>
 
 
 
             <div className={styles.container} ref={dropdown2Ref}>
                 <button onClick={() => {toggleCollapse('downArrowBtn'),toggleDropdown('isOpen2')}} className={styles.userbutton}>
-                    <img src="/down-arrow.png" alt="profile-button" border="0" className={styles.downarrow} />
+                    <img src={downarrow} alt="profile-button" border="0" className={styles.downarrow} />
                 </button>
                 {dropdownStatus.isOpen2 &&activeButton.downArrowBtn && (
                     <div className={`${styles['userdetails']} ${styles['hidden']}`}>
