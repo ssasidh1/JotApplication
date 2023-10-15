@@ -190,7 +190,7 @@ export function Home() {
             )} 
         </div> 
             <hr className={styles.hrline} />
-            {/* <NotesStorage data={notes} />  */}
+            <NotesStorage data={notes} /> 
             
         </div>
     );
