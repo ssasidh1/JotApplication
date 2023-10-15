@@ -2,6 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300;1,400;1,500&family=Roboto+Slab:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400;1,600&family=Noto+Sans+Display:ital,wght@0,400;1,100&family=Open+Sans:ital,wght@1,300;1,400;1,500&family=Roboto+Slab:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400;1,600&family=Noto+Sans+Display:ital,wght@0,400;1,100&family=Open+Sans:ital,wght@1,300;1,400;1,500&family=Playfair+Display:wght@700&family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&family=Playfair+Display:wght@500&family=Poppins:wght@500&display=swap');
+/* html, body{
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+    background-color: rgba(220, 233, 233, 0.096);
+} */
+/* body{
+    /* position: absolute; */
+    /* height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 0;
+    background-color: aqua;
+}
+
+
 .form-data{
     position: absolute;
     top:2%;
@@ -11,9 +30,10 @@
 
 .name-input{
     position:absolute;
-    left:140px;
+    left:0.5%;
     padding: 0.200rem 0.75rem;
-    
+    height: 30px;
+    width: 250px;
     line-height: 1.5;
     color: #212529;
     background-color: #fff;
@@ -21,44 +41,45 @@
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
-.name-label{
-    position: absolute;
+.name-input:focus{
+    outline-width: 4px;
+    outline-color:rgb(28, 129, 245) ;
+    border: 1px solid rgb(9, 152, 235) ; 
+    border-radius: 0.25rem;
+}
+.name-input::placeholder{
     font-family: 'Playfair Display', serif;
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 500;
 }
 
-.tags{
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    position: absolute;
-    right:28%;
-    
-}
+
 .creatable{
-    position: absolute !important;
-    width: 25%;
-    right:2%;
+    position: absolute;
+    height: 30px;
+    width: 265px;
+    right:0%;
     
 }
-.css-13cymwt-control{
-    min-height: 10px !important;
-    max-height: 35px !important;
-}
-.body-label{
-    position: absolute;
-    display: block;
-    top: 10%;
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    left:1%;
-}
 
+
+
+
+.textarea::placeholder{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+.textarea-keys::placeholder{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+}
 .textarea{
     position: absolute;
     display: block;
-    top: 94px;
-    width: 752px;
+    top: 10%;
+    width: 648px;
     height: 80%;
     resize: none;
     padding: 0.200rem 0.75rem;
@@ -75,23 +96,13 @@
     outline: none;
 }
 
-.keypts-label{
-    position: absolute;
-    display: block;
-    top:10%;
-    left: 800px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: bolder;
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-}
 
 .textarea-keys{
     position: absolute;
     display: block;
-    top: 94px;
-    left: 753px;
-    width: 17%;
+    top: 10%;
+    right: 0%;
+    width: 242px;
     height: 80%;
     resize: none;
     padding: 0.200rem 0.75rem;
@@ -111,33 +122,191 @@
 .save-btn{
     position: absolute;
     bottom: 50px;
-    right: 80px;
-    background-color: rgb(193, 224, 107);
-    border: 1.5px solid green;
+    right: 140px;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(230, 240, 222, 0.301);
+    border: 1.5px solid rgb(153, 165, 153);
     border-radius: 0.25rem;
-    padding:5px 10px;
+    padding:0px 2px  0px 2px;
+    font-family:'Merriweather Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    cursor: pointer;
 }
 
 .cancel-btn{
     position: absolute;
     bottom: 50px;
     right: 10px;
-    background-color: rgb(239, 247, 219);
-    border: 1px solid rgb(1, 54, 1);
+    width: 100px;
+    height: 30px;
+    background-color: rgba(252, 239, 229, 0.493);
+    border: 1px solid rgb(212, 226, 212);
     border-radius: 0.25rem;
-    padding:5px 10px;
-}
-.css-b62m3t-container {
-    /* position: relative; */
-    box-sizing: border-box;
-}
+    padding:0px 2px  0px 2px;
+    font-family:'Merriweather Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    cursor: pointer;
+} */ 
 
-.module{
-    background-color: red;
-}
 
-.textEditor{
-    position: absolute;
-    top:30%;
-}
 
+/* .textarea-keys
+    .textarea
+    .creatable
+    .name-input
+*/
+
+
+@media (min-width:1025px) and (max-width: 1280px){
+    html{
+        background-color: rgb(56, 13, 20);
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    body{
+        /* background-color: green; */
+        box-sizing: border-box;
+        /* border: 2px solid rgb(238, 232, 232); */
+        background-color: tomato;
+        max-height: 100vh;
+        max-width: 100vw;
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+     
+     }
+     
+     .form-data{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        /* top:2%; */
+        box-sizing: border-box;
+        height: 100vh;
+        width: 100vw;
+    }
+     .textarea{
+        position: absolute;
+        top:6.5%;
+        width: 670px;
+        height: 80vh;
+        left:10%;
+        resize: none;
+        padding: 0.200rem 0.75rem;
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        font-weight: 500;
+        color: #212529;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+     }
+     .textarea:focus{
+        outline: none;
+    }
+     .textarea-keys{
+        position: absolute;
+        width: 300px;
+        right: 10%;
+        top:6.5%;
+        height: 80vh;
+        resize: none;
+        padding: 0.200rem 0.75rem;
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+     }
+     .textarea-keys:focus{
+        outline: none;
+    }
+     .name-input{
+        position: relative;
+        width: 200px;
+        height: 35px !important;
+        left: 10%;
+        color: #212529;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+     }
+     .name-input:focus{
+        outline: 0;
+        border-radius: 0.25rem;
+    }
+     .name-input::placeholder{
+        font-family: 'Playfair Display', serif;
+        font-size: 13px;
+        font-weight: 700;
+     }
+     .creatable{
+        position: absolute !important;
+        display: flex;
+        flex-direction: column;
+        width: 276px;
+        height: 37px !important;
+        right: 10%;
+        overflow: hidden ;
+        padding: 0;
+        border-radius: 0.25rem;
+        box-sizing: border-box;
+     }
+     .creatable::placeholder{
+
+     
+        font-size: 1px;
+     }
+     html .css-13cymwt-control {
+        position: absolute !important;
+        border-radius: 0 !important;
+        align-self: flex-end;
+        padding: 0 !important;
+        overflow:visible;
+     }
+     html .css-art2ul-ValueContainer2{
+        position: absolute !important;
+        min-height: 10px !important;
+        align-self: start !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        outline-color: blue !important ;
+     }
+     .save-btn{
+        position: absolute;
+        top:82%;
+        right: 6.5%;
+        outline: none;
+        border: 0;
+        background-color: inherit;
+        cursor: pointer;
+     }
+     .saveImg{
+        height: 37px;
+     }
+     .cancelImg{
+        height: 37px;
+     }
+     .cancel-btn{
+        position: absolute;
+        top:82%;
+        left: 6.5%;
+        outline: none;
+        border: 0;
+        background-color: inherit;
+        cursor: pointer;
+    }
+} 

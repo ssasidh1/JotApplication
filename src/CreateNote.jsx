@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import CreatableReactSelect from "react-select/creatable"
 import { getTags, useLocalStorage } from "./useLocalStorage";
 import {RichTextEditor} from "./RichTextEditor";
+import save from "/save.svg";
+import cancel from "/cancel.svg";
 import parse from 'html-react-parser';
 export function CreateNote(){
 
@@ -55,12 +57,12 @@ export function CreateNote(){
     }
     return(
        <>
+       
        <form className={styles['form-data']} onSubmit= {handleSubmit  } ref={formRef}>
 
-        <label htmlFor="title" className={styles["name-label"]}>Start with a Title</label>
-        <input  type="text" id="title" name="title" className={styles["name-input"] }  required/>
+        <label htmlFor="title" className={styles["name-label"]}></label>
+        <input  type="text" id="title" name="title" className={styles["name-input"] }  placeholder="Start with a Title" required/>
 
-        <label  className={styles["tags"]}>Add tags</label>
         <CreatableReactSelect className={styles["creatable"]}  
         isClearable
         isDisabled={isLoading}
@@ -69,24 +71,31 @@ export function CreateNote(){
         options={Options} 
         value={value} 
         onChange={handlechange}  
-        onCreateOption={handleCreate} name="tags" />
+        onCreateOption={handleCreate} name="tags"
+        placeholder="Tags" />
 
-        <label htmlFor="body" className={styles["body-label"]}>Jot it down</label>
+        <label htmlFor="body" className={styles["body-label"]}></label>
         <textarea  className={styles["textarea"]} id="body" name="body" value={parse(body)}
-        onChange={setBodyContent} required></textarea>
+        onChange={setBodyContent} placeholder="Jot it down"required></textarea>
 
-        <label htmlFor="keys"  className={styles["keypts-label"]}>Keys</label>
-        <textarea  className={styles["textarea-keys"]} id="keys" name="keys" ></textarea>
+        <label htmlFor="keys"  className={styles["keypts-label"]}></label>
+        <textarea  className={styles["textarea-keys"]} id="keys" name="keys" placeholder="Keys" ></textarea>
+        <button className={styles["save-btn"]} type="submit" >
+            <img src = {save} alt= "save" className={styles.saveImg}/>
+        </button>
         
            
-        <input className={styles["save-btn"]} type="submit" disabled = {isLoading} value="Save" />
+        {/* <input className={styles["save-btn"]} type="submit" disabled = {isLoading} value="SAVE" /> */}
         
        
         <Link to ="..">
-        <input className={styles["cancel-btn"]} type="submit" disabled = {isLoading} value="Cancel" />
+        <button className={styles["cancel-btn"]} type="submit" >
+            <img src = {cancel} alt= "save" className={styles.cancelImg}/>
+        </button>
         </Link>
        </form>
        {/* <RichTextEditor body={body} setBody={setBody}/> */}
+
        </>
        
     )

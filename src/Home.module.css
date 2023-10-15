@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,400;1,100&family=Open+Sans:ital,wght@1,300;1,400;1,500&family=Roboto+Slab:wght@500&display=swap');
-.html, body{
+/* html, body{
     margin: 0px;
     padding: 0px;
     border: 0;
     background-color: rgba(220, 233, 233, 0.096);
-}
+} */
 .div-main{
     position: relative;
     width: 100%;
