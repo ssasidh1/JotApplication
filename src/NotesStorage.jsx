@@ -38,7 +38,7 @@ export function NotesStorage(props){
     },[edit])
     
       
-    if(notes.size == 0) return<><h1>No notes yet</h1></>
+    if(notes.size == 0) return<><h1 style={{position:"absolute", top:"90%",}}>No notes yet</h1></>
     return(
     <div className={styles["container"]}>
   
