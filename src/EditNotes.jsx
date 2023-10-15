@@ -4,7 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 import CreatableReactSelect from "react-select/creatable"
 import { updateStorage } from "./useLocalStorage";
-
+import save1 from "/save1.png";
+import cancel1 from "/cancel1.png";
 export function EditNotes(){
 
     const loc = useLocation();
@@ -72,10 +73,8 @@ export function EditNotes(){
        <>
        <form className={styles['form-data']} onSubmit= {handleSubmit  } ref={formRef}>
 
-        <label htmlFor="title" className={styles["name-label"]}>Title</label>
         <input  type="text" id="title" name="title" className={styles["name-input"] } value={form.title} onChange={handleOnChange} required/>
 
-        <label  className={styles["tags"]}>Add tags</label>
         <CreatableReactSelect className={styles["creatable"]}  
         isClearable
         isDisabled={isLoading}
@@ -84,20 +83,21 @@ export function EditNotes(){
         options={Options} 
         value={value} 
         onChange={handlechange}  
-        onCreateOption={handleCreate} name="tags" />
+        onCreateOption={handleCreate} name="tags" placeholder="#Tags" />
 
-        <label htmlFor="body" className={styles["body-label"]}>Jot it down</label>
         <textarea  className={styles["textarea"]} id="body" name="body"  value = {form.body} onChange={handleOnChange} required></textarea>
 
-        <label htmlFor="keys"  className={styles["keypts-label"]}>Keys</label>
         <textarea  className={styles["textarea-keys"]} id="keys" name="keys" value = {form.keys} onChange={handleOnChange} ></textarea>
         
            
-        <input className={styles["save-btn"]} type="submit" disabled = {isLoading} value="Save" />
+        <button className={styles["save-btn"]} type="submit" >
+            <img src = {save1} alt= "save1" className={styles.saveImg}/>
+        </button>
         
-       
         <Link to ="..">
-        <input className={styles["cancel-btn"]} type="submit" disabled = {isLoading} value="Cancel" />
+        <button className={styles["cancel-btn"]} type="submit" >
+            <img src = {cancel1} alt= "save" className={styles.cancelImg}/>
+        </button>
         </Link>
        </form>
        {/* //<NotesStorage data={initialVal} />  */}
