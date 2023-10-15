@@ -157,11 +157,10 @@ export function Home() {
         };
       }, [dropdownStatus]);
     return (
+       
         <div className={styles["div-main"]}>
-            <input type="search" className={styles.Search} placeholder="Search..." 
+         <input type="search" className={styles.Search} placeholder="Search..." 
             onChange={searchChange} onClick = {()=>toggleDropdown('isOpen1')} value={search}  ref={dropdown1Ref} />
-           
-
             {
                  dropdownStatus.isOpen1 &&  filter.size > 0 && (
                     <div className={styles["list"]}>
@@ -169,36 +168,29 @@ export function Home() {
                             <button className={styles["btn_list"]}
                                 key={data[0]} onClick=
                                 {() => handlebtnClick(data)}>{data[1].title}</button>))
-                        }
-                    </div>
-                )
+                        } 
+                      </div>)
             }
-             {
-                
-                console.log("html fill", filter.size)
-                
-            }
-            <CreatableSelect isMulti styles = {style}options={options} value = {value} className={styles['tag-search']} onChange = {handleTagChange} />
-            {/* <input type="search" className={styles['tag-search']} placeholder="Search with Tags" onChange={tagChange} value={search} /> */}
-            <button onClick={() => navigateToCreatePage()} className={styles.plusbutton}>
-                <img src={plus} alt="plus-button" border="0" className={styles.plusbtn} />
+        
+        <CreatableSelect isMulti styles = {style}options={options} value = {value} className={styles['tag-search']} onChange = {handleTagChange} /> 
+       
+        <button onClick={() => navigateToCreatePage()} className={styles.plusbutton}> 
+        <img src={plus} alt="plus-button" border="0" className={styles.plusbtn} />
+        </button>
+            
+        <div className={styles.container} ref={dropdown2Ref}>
+            <button onClick={() => {toggleCollapse('downArrowBtn'),toggleDropdown('isOpen2')}} className={styles.userbutton}>
+            <img src={downarrow} alt="profile-button" border="0" className={styles.downarrow} />
             </button>
+            {dropdownStatus.isOpen2 &&activeButton.downArrowBtn && ( 
+                <div className={`${styles['userdetails']} ${styles['hidden']}`}>
+                                <a href="#">hello</a>
+                            </div>
 
-
-
-            <div className={styles.container} ref={dropdown2Ref}>
-                <button onClick={() => {toggleCollapse('downArrowBtn'),toggleDropdown('isOpen2')}} className={styles.userbutton}>
-                    <img src={downarrow} alt="profile-button" border="0" className={styles.downarrow} />
-                </button>
-                {dropdownStatus.isOpen2 &&activeButton.downArrowBtn && (
-                    <div className={`${styles['userdetails']} ${styles['hidden']}`}>
-                        <a href="#">hello</a>
-                    </div>
-
-                )}
-            </div>
+            )} 
+        </div> 
             <hr className={styles.hrline} />
-           <NotesStorage data={notes} />
+            {/* <NotesStorage data={notes} />  */}
             
         </div>
     );

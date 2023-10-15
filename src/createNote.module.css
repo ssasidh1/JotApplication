@@ -162,7 +162,6 @@
 
 @media (min-width:1025px) and (max-width: 1280px){
     html{
-        background-color: rgb(56, 13, 20);
         height: 100vh;
         width: 100vw;
         margin: 0;
@@ -173,7 +172,10 @@
         /* background-color: green; */
         box-sizing: border-box;
         /* border: 2px solid rgb(238, 232, 232); */
-        background-color: tomato;
+        background-image: url('../PUBLIC/bg.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* background-color: #f58383; */
         max-height: 100vh;
         max-width: 100vw;
         height: 100vh;
@@ -194,9 +196,9 @@
     }
      .textarea{
         position: absolute;
-        top:6.5%;
+        top:7%;
         width: 670px;
-        height: 80vh;
+        height: 90vh;
         left:10%;
         resize: none;
         padding: 0.200rem 0.75rem;
@@ -204,7 +206,7 @@
         font-size: 18px;
         font-weight: 500;
         color: #212529;
-        background-color: #fff;
+        background-color: rgb(243, 235, 234);
         border: 1px solid #ced4da;
         border-radius: 0.25rem;
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -213,11 +215,13 @@
         outline: none;
     }
      .textarea-keys{
+        
+        
         position: absolute;
         width: 300px;
         right: 10%;
-        top:6.5%;
-        height: 80vh;
+        top:7%;
+        height: 90vh;
         resize: none;
         padding: 0.200rem 0.75rem;
         font-family: 'Playfair Display', serif;
@@ -225,7 +229,7 @@
         font-weight: 400;
         line-height: 1.5;
         color: #212529;
-        background-color: #fff;
+        background-color: rgb(245, 230, 228);
         border: 1px solid #ced4da;
         border-radius: 0.25rem;
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -235,13 +239,14 @@
     }
      .name-input{
         position: relative;
-        width: 200px;
+        width: 270px;
         height: 35px !important;
         left: 10%;
         color: #212529;
         background-color: #fff;
         border: 1px solid #ced4da;
         border-radius: 0.25rem;
+        padding: 1px;
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
      }
      .name-input:focus{
@@ -250,63 +255,59 @@
     }
      .name-input::placeholder{
         font-family: 'Playfair Display', serif;
-        font-size: 13px;
-        font-weight: 700;
+        font-size: 15px;
+        font-weight: 500;
      }
      .creatable{
         position: absolute !important;
-        display: flex;
-        flex-direction: column;
         width: 276px;
         height: 37px !important;
         right: 10%;
-        overflow: hidden ;
         padding: 0;
         border-radius: 0.25rem;
         box-sizing: border-box;
      }
      .creatable::placeholder{
 
-     
+        font-family: 'Playfair Display', serif;
         font-size: 1px;
      }
-     html .css-13cymwt-control {
-        position: absolute !important;
-        border-radius: 0 !important;
-        align-self: flex-end;
-        padding: 0 !important;
-        overflow:visible;
-     }
-     html .css-art2ul-ValueContainer2{
-        position: absolute !important;
-        min-height: 10px !important;
-        align-self: start !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        outline-color: blue !important ;
-     }
+    
      .save-btn{
         position: absolute;
         top:82%;
-        right: 6.5%;
+        right: 6%;
+        height: 55px;
+        width: 47px;
+        padding: 2px;
         outline: none;
         border: 0;
         background-color: inherit;
         cursor: pointer;
+        align-items: center;
+     }
+     .save-btn:hover{
+        border: 2px solid wheat;
      }
      .saveImg{
-        height: 37px;
+        height: 45px;
      }
      .cancelImg{
-        height: 37px;
+        height: 46px;
      }
      .cancel-btn{
         position: absolute;
         top:82%;
-        left: 6.5%;
+        left: 6%;
+        height: 60px;
+        width: 47px;
+        padding: 2px;
         outline: none;
         border: 0;
         background-color: inherit;
         cursor: pointer;
     }
+    .cancel-btn:hover{
+        border: 2px solid wheat;
+     }
 } 

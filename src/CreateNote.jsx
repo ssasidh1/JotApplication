@@ -6,7 +6,9 @@ import CreatableReactSelect from "react-select/creatable"
 import { getTags, useLocalStorage } from "./useLocalStorage";
 import {RichTextEditor} from "./RichTextEditor";
 import save from "/save.svg";
+import save1 from "/save1.png";
 import cancel from "/cancel.svg";
+import cancel1 from "/cancel1.png";
 import parse from 'html-react-parser';
 export function CreateNote(){
 
@@ -61,7 +63,7 @@ export function CreateNote(){
        <form className={styles['form-data']} onSubmit= {handleSubmit  } ref={formRef}>
 
         <label htmlFor="title" className={styles["name-label"]}></label>
-        <input  type="text" id="title" name="title" className={styles["name-input"] }  placeholder="Start with a Title" required/>
+        <input  type="text" id="title" name="title" className={styles["name-input"] }  placeholder="🤓Start with a Title" required/>
 
         <CreatableReactSelect className={styles["creatable"]}  
         isClearable
@@ -72,16 +74,16 @@ export function CreateNote(){
         value={value} 
         onChange={handlechange}  
         onCreateOption={handleCreate} name="tags"
-        placeholder="Tags" />
+        placeholder="#Tags" 
+        />
 
-        <label htmlFor="body" className={styles["body-label"]}></label>
         <textarea  className={styles["textarea"]} id="body" name="body" value={parse(body)}
         onChange={setBodyContent} placeholder="Jot it down"required></textarea>
 
         <label htmlFor="keys"  className={styles["keypts-label"]}></label>
         <textarea  className={styles["textarea-keys"]} id="keys" name="keys" placeholder="Keys" ></textarea>
         <button className={styles["save-btn"]} type="submit" >
-            <img src = {save} alt= "save" className={styles.saveImg}/>
+            <img src = {save1} alt= "save1" className={styles.saveImg}/>
         </button>
         
            
@@ -90,7 +92,7 @@ export function CreateNote(){
        
         <Link to ="..">
         <button className={styles["cancel-btn"]} type="submit" >
-            <img src = {cancel} alt= "save" className={styles.cancelImg}/>
+            <img src = {cancel1} alt= "save" className={styles.cancelImg}/>
         </button>
         </Link>
        </form>
