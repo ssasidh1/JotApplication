@@ -63,7 +63,7 @@ export function CreateNote(){
        <form className={styles['form-data']} onSubmit= {handleSubmit  } ref={formRef}>
 
         <label htmlFor="title" className={styles["name-label"]}></label>
-        <input  type="text" id="title" name="title" className={styles["name-input"] }  placeholder="🤓Start with a Title" required/>
+        <input  type="text" id="title" name="title" className={styles["name-input"] }  placeholder="🤓Title" required/>
 
         <CreatableReactSelect className={styles["creatable"]}  
         isClearable
