@@ -78,12 +78,12 @@ export function CreateNote(){
         />
 
         <textarea  className={styles["textarea"]} id="body" name="body" value={parse(body)}
-        onChange={setBodyContent} placeholder="Jot it down"required></textarea>
+        onChange={setBodyContent} placeholder="Jot it down . . ."required></textarea>
 
         <label htmlFor="keys"  className={styles["keypts-label"]}></label>
-        <textarea  className={styles["textarea-keys"]} id="keys" name="keys" placeholder="Keys" ></textarea>
+        <textarea  className={styles["textarea-keys"]} id="keys" name="keys" placeholder="Keys . . ." ></textarea>
         <button className={styles["save-btn"]} type="submit" >
-            <img src = {save1} alt= "save1" className={styles.saveImg}/>
+            SAVE
         </button>
         
            
@@ -92,7 +92,8 @@ export function CreateNote(){
        
         <Link to ="..">
         <button className={styles["cancel-btn"]} type="submit" >
-            <img src = {cancel1} alt= "save" className={styles.cancelImg}/>
+            {/* <img src = {cancel1} alt= "save" className={styles.cancelImg}/> */}
+            BACK
         </button>
         </Link>
        </form>
