@@ -26,18 +26,52 @@ export function Home() {
       const dropdown1Ref = useRef(null);
       const dropdown2Ref = useRef(null);
     const navigate = useNavigate();
-   
+    useEffect(async()=>{
+        const username =  's'
+        try
+        {
+            const res = await fetch(
+                `https://fz7be10kxd.execute-api.us-east-1.amazonaws.com/notes/${username}`,
+                {
+                    method:"GET",
+                    mode:"cors",
+                    headers:{
+                        "Content-Type":"application/json"
+                    }
+                }
+            );
+
+            if(res.ok){
+                const data = await res.json()
+                setNotes(data.noteValues)
+                let tags = []
+                
+                const updatedData = data.noteValues.reduce((acc,item )=> {
+                    return acc.concat(item.tags);
+                  },[]);
+                console.log("notevals",updatedData)
+                setOptions(updatedData);
+            }
+            else{
+                console.error("failed to create");
+            }
+        } catch (error){
+            console.error("error to create");
+        }
+        
+    },[]);
     useEffect(()=>{
         if(value.length == 0){
+            
             setOptions(getTags()); 
             console.log("Fetched notes",notesFetchForHome())
-            setNotes(notesFetchForHome())
+            // setNotes(notesFetchForHome())
         }
         else{ 
             for(const v of value){
                 const dataTag = getDataForTag(v.value);
                 console.log("tag data",dataTag)
-                setNotes(dataTag)
+                // setNotes(dataTag)
             }
              
         }

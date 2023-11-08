@@ -34,9 +34,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
     justify-content: center;
     width:60%;
+    background-image: linear-gradient(to right, #ffffff, #e4f0f1c2, #e1eef1c9, #f3dbe600);;
+    border: 1px solid rgb(231, 229, 229);
+    border-radius: 5px;
 }
 .signupform{
     box-sizing: border-box;
@@ -48,8 +50,7 @@
     padding-right: 40px;
     padding-bottom: 20px;
     gap:15px;
-    align-items: center;
-    background-color: pink;
+    align-items: right;
     
 }
 
@@ -78,11 +79,12 @@
 }
 
 .submit{
+    width:100%;
     box-sizing: border-box;
     display: block;
     margin: 0;
     height: 30px;
-    width:50%;
     border: 1px solid rgb(190, 189, 189);
     border-radius: 3px;
+    background-image:linear-gradient(to right, #a5dff7f6, #d1eff1c2, #d0edf3c9, #a5dff7f6);
 }

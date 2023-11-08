@@ -78,6 +78,7 @@
     height: 30px;
     border: 1px solid rgb(190, 189, 189);
     border-radius: 3px;
+    background-image:linear-gradient(to right, #a5dff7f6, #d1eff1c2, #d0edf3c9, #a5dff7f6);
 }
 
 .newacnt{

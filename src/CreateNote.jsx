@@ -27,14 +27,44 @@ export function CreateNote(){
     const [body,setBody] = useState('');
    
     
-    const handleSubmit =(e)=>{
+    const handleSubmit =async(e)=>{
         e.preventDefault();
-        const initialValue = { title:formRef.current.title.value,
+        const formValue = { 
+                    username:"s",
+                    noteValues:[{
+                    title:formRef.current.title.value,
                     body:formRef.current.body.value,
                     keys:formRef.current.keys.value,
-                    tags:value}
-   
-        useLocalStorage('data',initialValue)
+                    tags:value}]
+                    };      
+        
+            try
+            {
+                const res = await fetch(
+                    "https://fz7be10kxd.execute-api.us-east-1.amazonaws.com/notes",
+                    {
+                        method:"PUT",
+                        mode:"cors",
+                        headers:{
+                            "Content-Type":"application/json"
+                        },
+                        body:JSON.stringify(formValue)
+                    }
+                );
+    
+                if(res.ok){
+                    console.log("done")
+                }
+                else{
+                    console.error("failed to create");
+                }
+            } catch (error){
+                console.error("error to create");
+            }
+            
+    
+    
+        // useLocalStorage('data',initialValue)
         alert("Saved")
 
         
