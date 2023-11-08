@@ -10,7 +10,7 @@ export function EditNotes(){
 
     const loc = useLocation();
     const props = loc.state && loc.state.editData;
-    console.log("edit props", props[1])
+    console.log("edit props", props[0])
     const formRef = useRef(null)
     const navigate = useNavigate();
     const createOption= (label)=>({
@@ -20,15 +20,15 @@ export function EditNotes(){
     let Defaultoptions=[
         { label:'css',value:'css'},
     ]
-    if(props[1].tags.length !=0)
-    Defaultoptions = [...Defaultoptions, props[1].tags]
+    if(props[0].tags.length !=0)
+    Defaultoptions = [...Defaultoptions, ...props[0].tags]
     const [isLoading, setIsLoading] = useState(false);
     const [Options, setOptions] = useState(Defaultoptions);
     const [value, setValue] = useState([]);
     const [form, setForm] = useState({
-        title:props[1].title,
-        body:props[1].body,
-        keys:props[1].keys,
+        title:props[0].title,
+        body:props[0].body,
+        keys:props[0].keys,
     }
     )
    
@@ -100,7 +100,7 @@ export function EditNotes(){
        <>
        <form className={styles['form-data']} onSubmit= {handleSubmit  } ref={formRef}>
 
-        <input  type="text" id="title" name="title" className={styles["name-input"] } value={form.title} onChange={handleOnChange} required/>
+        <input  type="text" disabled= "true" style={{backgroundColor:"lightgray"}} id="title" name="title" className={styles["name-input"] } value={form.title} onChange={handleOnChange} required/>
 
         <CreatableReactSelect className={styles["creatable"]}  
         isClearable
@@ -118,12 +118,12 @@ export function EditNotes(){
         
            
         <button className={styles["save-btn"]} type="submit" >
-            <img src = {save1} alt= "save1" className={styles.saveImg}/>
+            SAVE
         </button>
         
         <Link to ="..">
         <button className={styles["cancel-btn"]} type="submit" >
-            <img src = {cancel1} alt= "save" className={styles.cancelImg}/>
+            BACK
         </button>
         </Link>
        </form>

@@ -13,12 +13,15 @@ export function NotesStorage(props){
     
     const [notes, setNotes] = useState(new Map())
     
-    const handleClick = (id)=>{
-      const updateEdit = [];
-      updateEdit.push(id)
-      updateEdit.push(notes.get(id))
-      
-        setEdit(updateEdit)
+    const handleClick = (title)=>{
+      // const updateEdit = [];
+      // updateEdit.push(id)
+      // updateEdit.push(notes.get(id))
+        const item = notes.filter((items)=>{
+          return items.title==title
+        })
+        console.log("selected",item)
+        setEdit(item)
         
     }
     useEffect(()=>{
@@ -41,17 +44,15 @@ export function NotesStorage(props){
     if(notes.size == 0) return<><h1 style={{position:"absolute", top:"90%",}}>No notes yet</h1></>
     return(
     <div className={styles["container"]}>
-  
-        
         {
            Array.from(notes.entries()).map((note,index)=>(
           
-             <div key = {note[0]} className={styles["flex-card"]}>
+             <div key = {note[1].title} className={styles["flex-card"]}>
                 <h2 className={styles["card-title"]}>{note[1].title}</h2>
                 <p className={styles["card-body"]}>{note[1].body}</p>
-                <button className={styles["view-btn"]} onClick={()=>handleClick(note[0])}>
+                <button className={styles["view-btn"]} onClick={()=>handleClick(note[1].title)}>
                 <img src={pencil} alt="edit-button" border="0" className={styles.edit} /></button>
-                <button className={styles["delete-btn"]} onClick={()=>handleDeleteClick(note[0])}>
+                <button className={styles["delete-btn"]} onClick={()=>handleDeleteClick(note[1].title)}>
                 <img src={trash} alt="edit-button" border="0" className={styles.trash} />
                 </button>
              </div>

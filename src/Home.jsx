@@ -19,6 +19,7 @@ export function Home() {
     const [value,setValue] = useState([]);
     const [options,setOptions] = useState([])
     const [notes, setNotes] = useState(new Map())
+    const [notedata,setNoteData] = useState();
     const [dropdownStatus, setDropdownStatus] = useState({
         isOpen1: false,
         isOpen2: false,
@@ -26,8 +27,9 @@ export function Home() {
       const dropdown1Ref = useRef(null);
       const dropdown2Ref = useRef(null);
     const navigate = useNavigate();
-    useEffect(async()=>{
+    useEffect(()=>{
         const username =  's'
+        const getdata = async()=>{
         try
         {
             const res = await fetch(
@@ -43,14 +45,16 @@ export function Home() {
 
             if(res.ok){
                 const data = await res.json()
+                setNoteData(data.noteValues)
                 setNotes(data.noteValues)
-                let tags = []
                 
                 const updatedData = data.noteValues.reduce((acc,item )=> {
                     return acc.concat(item.tags);
                   },[]);
                 console.log("notevals",updatedData)
                 setOptions(updatedData);
+                
+                
             }
             else{
                 console.error("failed to create");
@@ -58,25 +62,35 @@ export function Home() {
         } catch (error){
             console.error("error to create");
         }
-        
+    }
+    getdata();
     },[]);
     useEffect(()=>{
-        if(value.length == 0){
-            
-            setOptions(getTags()); 
-            console.log("Fetched notes",notesFetchForHome())
-            // setNotes(notesFetchForHome())
-        }
-        else{ 
+        if(value.length != 0)
+        {
+            let dTag = [];
             for(const v of value){
-                const dataTag = getDataForTag(v.value);
-                console.log("tag data",dataTag)
-                // setNotes(dataTag)
+                // const dataTag = getDataForTag(v.value);
+                 dTag = notedata.reduce((acc,item)=>{
+                    console.log("acc",acc)
+                    return acc.concat( item.tags.map((e)=>{
+                        if(e.value === v.value){
+                            return item
+                        }
+                    }).filter(Boolean) // Filter out undefined values
+                    )
+                },dTag)
+
             }
-             
+                                  
+            console.log("tag data",dTag)
+            setNotes(dTag)
+        }
+        else{
+            setNotes(notedata || [])
         }
         
-    },[value])
+    },[value,notedata])
     const toggleCollapse = (buttonName) => {
         setActiveButton(
             (prevState) => ({
@@ -89,7 +103,7 @@ export function Home() {
 
     const navigateToCreatePage = () => {
 
-        navigate('/jot/create')
+        navigate('/jot/create', {state:{notes: notes}})
 
     }
     useEffect(() => {

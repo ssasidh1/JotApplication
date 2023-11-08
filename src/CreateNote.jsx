@@ -1,6 +1,6 @@
 import styles from "./createNote.module.css"
 import { useState,useRef, useEffect } from "react"
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 import CreatableReactSelect from "react-select/creatable"
 import { getTags, useLocalStorage } from "./useLocalStorage";
@@ -15,6 +15,13 @@ export function CreateNote(){
     
     const formRef = useRef(null)
     const navigate = useNavigate();
+    const loc = useLocation();
+    const props = loc.state && loc.state.notes;
+    
+    const titles = props.reduce((acc,item)=>{
+                return acc.concat(item.title)  
+            },[])
+    console.log("props from creat",titles)
     const createOption= (label)=>({
         label,
         value:label,
@@ -25,10 +32,10 @@ export function CreateNote(){
     const [Options, setOptions] = useState(Defaultoptions);
     const [value, setValue] = useState([]);
     const [body,setBody] = useState('');
-   
-    
+    const [isTitle, setisTitle]= useState(false);
     const handleSubmit =async(e)=>{
         e.preventDefault();
+        if(isTitle)return;
         const formValue = { 
                     username:"s",
                     noteValues:[{
@@ -37,7 +44,7 @@ export function CreateNote(){
                     keys:formRef.current.keys.value,
                     tags:value}]
                     };      
-        
+                    
             try
             {
                 const res = await fetch(
@@ -87,14 +94,31 @@ export function CreateNote(){
     const setBodyContent=(e)=>{
         setBody(e.target.value)
     }
+    const titleStyle = {
+        color: isTitle ? 'red' : 'black',
+      };
+    const uniqueTitles = (e)=>{
+            if(titles.includes(e.target.value)){
+                setisTitle(true)
+            }
+            else{
+                setisTitle(false)
+            }
+    }
     return(
        <>
        
        <form className={styles['form-data']} onSubmit= {handleSubmit  } ref={formRef}>
 
         <label htmlFor="title" className={styles["name-label"]}></label>
-        <input  type="text" id="title" name="title" className={styles["name-input"] }  placeholder="🤓Title" required/>
-
+        <input  type="text" id="title" style={titleStyle} name="title" className={styles["name-input"] } onChange={uniqueTitles} placeholder="🤓Title" required/>
+        {
+            isTitle &&(
+                <div>
+                    Title is wrong  
+                </div>
+            )
+        }
         <CreatableReactSelect className={styles["creatable"]}  
         isClearable
         isDisabled={isLoading}
