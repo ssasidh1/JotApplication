@@ -4,11 +4,7 @@ import { Link,useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 import CreatableReactSelect from "react-select/creatable"
 import { getTags, useLocalStorage } from "./useLocalStorage";
-import {RichTextEditor} from "./RichTextEditor";
-import save from "/save.svg";
-import save1 from "/save1.png";
-import cancel from "/cancel.svg";
-import cancel1 from "/cancel1.png";
+import { useUser } from './UserContext';
 import parse from 'html-react-parser';
 export function CreateNote(){
 
@@ -17,11 +13,11 @@ export function CreateNote(){
     const navigate = useNavigate();
     const loc = useLocation();
     const props = loc.state && loc.state.notes;
-    
+    const { username, signIn, signOut } = useUser();
     const titles = props.reduce((acc,item)=>{
                 return acc.concat(item.title)  
             },[])
-    console.log("props from creat",titles)
+   
     const createOption= (label)=>({
         label,
         value:label,
@@ -33,11 +29,12 @@ export function CreateNote(){
     const [value, setValue] = useState([]);
     const [body,setBody] = useState('');
     const [isTitle, setisTitle]= useState(false);
+    
     const handleSubmit =async(e)=>{
         e.preventDefault();
         if(isTitle)return;
         const formValue = { 
-                    username:"s",
+                    username:username,
                     noteValues:[{
                     title:formRef.current.title.value,
                     body:formRef.current.body.value,
@@ -60,7 +57,7 @@ export function CreateNote(){
                 );
     
                 if(res.ok){
-                    console.log("done")
+                    
                 }
                 else{
                     console.error("failed to create");
@@ -144,12 +141,10 @@ export function CreateNote(){
         {/* <input className={styles["save-btn"]} type="submit" disabled = {isLoading} value="SAVE" /> */}
         
        
-        <Link to ="..">
-        <button className={styles["cancel-btn"]} type="submit" >
+        <button className={styles["cancel-btn"]} type="submit" onClick={()=>navigate('/jot/')}>
             {/* <img src = {cancel1} alt= "save" className={styles.cancelImg}/> */}
             BACK
         </button>
-        </Link>
        </form>
        {/* <RichTextEditor body={body} setBody={setBody}/> */}
 

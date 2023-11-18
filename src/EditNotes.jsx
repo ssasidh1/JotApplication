@@ -10,7 +10,8 @@ export function EditNotes(){
 
     const loc = useLocation();
     const props = loc.state && loc.state.editData;
-    console.log("edit props", props[0])
+    const username = loc.state && loc.state.username;
+    
     const formRef = useRef(null)
     const navigate = useNavigate();
     const createOption= (label)=>({
@@ -24,7 +25,7 @@ export function EditNotes(){
     Defaultoptions = [...Defaultoptions, ...props[0].tags]
     const [isLoading, setIsLoading] = useState(false);
     const [Options, setOptions] = useState(Defaultoptions);
-    const [value, setValue] = useState([]);
+    const [value, setValue] = useState(Options);
     const [form, setForm] = useState({
         title:props[0].title,
         body:props[0].body,
@@ -36,7 +37,7 @@ export function EditNotes(){
     const handleSubmit =async (e)=>{
         e.preventDefault();
         const formValue = { 
-            username:"s",
+            username:username,
             noteValues:[{
             title:formRef.current.title.value,
             body:formRef.current.body.value,
@@ -46,6 +47,7 @@ export function EditNotes(){
 
     try
     {
+        
         const res = await fetch(
             "https://fz7be10kxd.execute-api.us-east-1.amazonaws.com/notes",
             {
@@ -59,7 +61,7 @@ export function EditNotes(){
         );
 
         if(res.ok){
-            console.log("done")
+            
         }
         else{
             console.error("failed to create");
@@ -74,7 +76,7 @@ export function EditNotes(){
         
     }
     const handlechange=(e)=>{
-        setValue(e);
+        setValue((prev)=>[...prev,e]);
         
     }
 
@@ -84,7 +86,7 @@ export function EditNotes(){
             const newOpt = createOption(inputValue);
             setIsLoading(false);
             setOptions((prev)=>[...prev,newOpt]);
-            setValue((prev)=>[...prev,newOpt]);
+            setValue((prev)=>[...prev,...Options,newOpt]);
         },1000);
     }
     
@@ -121,11 +123,11 @@ export function EditNotes(){
             SAVE
         </button>
         
-        <Link to ="..">
-        <button className={styles["cancel-btn"]} type="submit" >
+        
+        <button className={styles["cancel-btn"]} type="submit" onClick={()=>navigate('/jot/')}>
             BACK
         </button>
-        </Link>
+       
        </form>
        {/* //<NotesStorage data={initialVal} />  */}
        </>

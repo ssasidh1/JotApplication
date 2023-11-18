@@ -29,7 +29,7 @@ function App() {
   <Routes>
     <Route path="/jot/" element={<Home />}/>
     <Route path="/jot/create" element={<CreateNote  />}/>
-    <Route path="*" element={<Navigate to ="/jot/" />}/>
+    <Route path="*" element={<Navigate to ="/jot/signin" />}/>
     <Route path="/jot/edit" element={<EditNotes />}/>
     <Route path="/jot/signup" element={<SignUp />}/>
     <Route path="/jot/signin" element={<Signin />}/>

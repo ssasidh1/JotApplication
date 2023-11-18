@@ -356,7 +356,7 @@
        left:10%;
        resize: none;
        padding: 0.200rem 0.75rem;
-       font-family: 'Roboto', sans-serif;
+       font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
        font-size: 15px;
        font-weight: 500;
        font-style: italic;
@@ -379,9 +379,9 @@
        height: 80vh;
        resize: none;
        padding: 0.200rem 0.75rem;
-       font-family: 'Roboto', sans-serif;
+       font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
        font-size:15px;
-       font-weight: 400;
+       font-weight: 500;
        line-height: 1.5;
        font-style: italic;
        color: #212529;
@@ -411,7 +411,7 @@
        border-radius: 0.25rem;
    }
     .name-input::placeholder{
-       font-family: 'Playfair Display', serif;
+      font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
        font-size: 15px;
        font-weight: 500;
     }

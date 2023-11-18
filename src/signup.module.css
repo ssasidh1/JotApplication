@@ -53,7 +53,9 @@
     align-items: right;
     
 }
-
+.a-sign{
+    color:#045577f6;
+}
 .uname{
     height: 30px;
     width:100%;
