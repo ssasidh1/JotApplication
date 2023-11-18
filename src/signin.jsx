@@ -50,7 +50,7 @@ const homePage = async()=>{
             console.error("failed to create");
         }
     } catch (error){
-        console.error("error to create");
+        console.error("error to create",error);
     } 
 }  
 
