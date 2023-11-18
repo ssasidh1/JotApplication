@@ -31,7 +31,7 @@
             transparent 20px
           );
         border: 0.09rem solid rgb(224, 223, 223);
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
         box-shadow: 3px 2px 2px rgba(98, 99, 98, 0.7);
     }
     
@@ -49,7 +49,7 @@
     .card-body{
         position: absolute;
         flex-grow: 1;
-        top:10%;
+        top:8.5%;
         left: 1%;
         padding: 10px;
         font-family: 'Note And Notes', sans-serif;
@@ -61,6 +61,7 @@
         align-self: flex-end;
         font-size: 15px;
         font-weight: 0;
+        line-height: 1.3;
     }
     
     .view-btn{
@@ -127,7 +128,7 @@
             transparent 20px
           );
         border: 0.09rem solid rgb(224, 223, 223);
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
         box-shadow: 3px 2px 2px rgba(98, 99, 98, 0.7);
     }
     
@@ -145,7 +146,7 @@
     .card-body{
         position: absolute;
         flex-grow: 1;
-        top:10%;
+        top:8.5%;
         left: 1%;
         padding: 10px;
         font-family: 'Note And Notes', sans-serif;
@@ -157,6 +158,7 @@
         align-self: flex-end;
         font-size: 15px;
         font-weight: 0;
+        line-height: 1.3;
     }
     
     .view-btn{
@@ -225,7 +227,7 @@
             transparent 20px
           );
         border: 0.09rem solid rgb(224, 223, 223);
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
         box-shadow: 3px 2px 2px rgba(98, 99, 98, 0.7);
     }
     
@@ -243,7 +245,7 @@
     .card-body{
         position: absolute;
         flex-grow: 1;
-        top:10%;
+        top:8.5%;
         left: 1%;
         padding: 10px;
         font-family: 'Note And Notes', sans-serif;
@@ -255,6 +257,7 @@
         align-self: flex-end;
         font-size: 15px;
         font-weight: 0;
+        line-height: 1.3;
     }
     
     .view-btn{

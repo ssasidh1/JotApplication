@@ -60,12 +60,14 @@ export function Home() {
                 const data = await res.json()
                 setNoteData(data.noteValues ||[])
                 setNotes(data.noteValues || [])
-                
-                const updatedData = data.noteValues.reduce((acc,item )=> {
+                console.log("noteeee",data.noteValues)
+                if(data.noteValues)
+                {const updatedData = data.noteValues.reduce((acc,item )=> {
                     return acc.concat(item.tags);
                   },[]);
                 console.log("tags",updatedData);
                 setOptions(updatedData);
+                }
                 
                 
             }

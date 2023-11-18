@@ -41,7 +41,7 @@ export function CreateNote(){
                     keys:formRef.current.keys.value,
                     tags:value}]
                     };      
-                    
+                   console.log("createnotes",formValue.username) 
             try
             {
                 const res = await fetch(

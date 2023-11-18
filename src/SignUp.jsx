@@ -13,7 +13,7 @@ export function SignUp()
             password: password.current.value,
         };
        
-    
+        console.log("Signup",userData.username,userData.password)
         try
         {
             const res = await fetch(

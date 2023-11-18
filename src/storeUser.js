@@ -6,6 +6,7 @@
       const sessionData = JSON.parse(localStorage.getItem('sessionData')) || {};
     
       // Store the user information in the sessionData
+      console.log("session username",username)
       sessionData[getSessionId()] = { username };
     
       // Update the sessionData in localStorage
@@ -20,11 +21,17 @@
       return sessionData[getSessionId()] || {};
     }
 
-    export function getSessionId(){
-        if (!localStorage.getItem('sessionId') && !localStorage.getItem('sessionId').username !== Date.now().toString() ) {
-            localStorage.setItem('sessionId', Date.now().toString());
-          }
-        
-          return localStorage.getItem('sessionId');
-    }
-
+    export function getSessionId() {
+      let sessionId = localStorage.getItem('sessionId');
+  
+      if (!sessionId) {
+          // Generate a unique session ID
+          sessionId = Date.now().toString();
+  
+          // Store the session ID in localStorage
+          localStorage.setItem('sessionId', sessionId);
+      }
+  
+      return sessionId;
+  }
+  
