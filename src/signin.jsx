@@ -20,7 +20,7 @@ const homePage = async()=>{
             username:uname.current.value,
             password:passw.current.value
             };   
-        console.log("username from signin",userInfo.username,userInfo.passwor)
+        console.log("username from signin",userInfo.username,userInfo.password)
         const res = await fetch(
             `https://fz7be10kxd.execute-api.us-east-1.amazonaws.com/notes`,
             {
