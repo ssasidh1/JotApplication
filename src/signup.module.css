@@ -35,7 +35,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:60%;
+    width:500px;
     background-image: linear-gradient(to right, #ffffff, #e4f0f1c2, #e1eef1c9, #f3dbe600);;
     border: 1px solid rgb(231, 229, 229);
     border-radius: 5px;

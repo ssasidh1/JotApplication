@@ -685,7 +685,7 @@
       position: absolute;
       top:7%;
       width: 52%;
-      height: 80vh;
+      height: 965px;
       left:10%;
       resize: none;
       padding: 0.200rem 0.75rem;
@@ -709,7 +709,7 @@
       width: 24%;
       right: 10%;
       top:7%;
-      height: 80vh;
+      height: 965px;
       resize: none;
       padding: 0.200rem 0.75rem;
       font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
